@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+
+
+
+
+
+<view class="selectpopup_bg">   
+ <selectpopup  id="selectpopup" bind:selectPopupItemClick="selectPopupItemClick" 
+      bind:selectPopupExit="selectPopupExit"></selectpopup>
+</view>
+
+ <button type="primary" bindtap="showPopup" style="margin-top: 30rpx;"> SelectPopup </button>

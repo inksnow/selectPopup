@@ -1,0 +1,37 @@
+<!--components/selectpopup/selectpopup.wxml-->
+
+
+
+<!--  start -->
+<view class="popup_select_bg" style=" visibility:{{popupSelectDisplay}}" id="out" bindtap='exitClick'>
+
+	<view class="popup_select_content_bg " style="padding:{{padding}}rpx" id="popup_select_content" animation="{{animation_select}}">
+
+
+		<view class="popup_select_content_top" style="border-bottom-left-radius: {{padding== 0 ? '0':radius}}rpx;border-bottom-right-radius: {{padding== 0 ? '0':radius}}rpx; border-top-left-radius:{{radius}}rpx;border-top-right-radius:{{radius}}rpx;">
+
+
+
+
+			<view class="popup_select_item_bg" style="height:{{itemHeight}}rpx"  wx:for="{{selectItemText}}"  wx:key="selectItemText" >
+				<view class="popup_select_item_view" id="list_{{index}}" bindtap='click' hover-class="click_hover" hover-stay-time="100" style="color:{{selectItemTextColor[index]}}"> {{item}} </view>
+		
+			<view class="popup_select_item_splitLine"  hidden="{{(index+1)==selectItemText.length? true:false}}"   />
+
+	</view>
+
+
+		</view>
+
+		<view class="popup_select_item_splitLine" hidden="{{((padding== 0)&showExit) ? false:true}}" />
+
+		<view class="popup_select_content_exit" hidden="{{!showExit}}"  style="margin-top: {{padding== 0 ? '0':padding}}rpx;  border-radius: {{padding== 0 ? '0':radius}}rpx;">
+			<view class="popup_select_item_bg" style="height:{{itemHeight}}rpx">
+				<view class="popup_select_item_view" id="cancel" bindtap='exitClick' hover-class="click_hover" hover-stay-time="100" style="color:{{exitColor}}"> {{exitText}} </view>
+			</view>
+
+		</view>
+
+	</view>
+</view>
+<!--  end -->
